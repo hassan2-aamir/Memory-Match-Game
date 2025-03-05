@@ -65,7 +65,7 @@ function checkMatch() {
 
 
 function startGame() {
-    let timeLeft = 30;
+    timeLeft = 30;
     startbtn.disabled = true;
     score = 0; // Reset score to zero
     scoreElement.textContent = `Score: ${score}`;
@@ -77,7 +77,7 @@ function startGame() {
     gameContainer.addEventListener('click', handleCardClick);
 }
 
-function startGameTimer(timeLeft) {
+function startGameTimer() {
     timerElement.textContent = `Time Left: ${timeLeft}`;
     gameInterval = setInterval(() => {
         timeLeft--;
@@ -85,14 +85,12 @@ function startGameTimer(timeLeft) {
 
         if (timeLeft === 0) {
             clearInterval(gameInterval);
-            let timeLeft = 30;
             alert('Game Over!');
             startbtn.disabled = false;
         }
 
         if (document.querySelectorAll('.matched').length === cards.length) {
             clearInterval(gameInterval);
-            let timeLeft = 30;
             alert('You Have achieved the highest score!');
             startbtn.disabled = false;
         }
