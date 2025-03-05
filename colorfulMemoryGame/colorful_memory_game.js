@@ -83,7 +83,7 @@ function startGameTimer(timeLeft) {
             startbtn.disabled = false;
         }
 
-        if (document.querySelectorAll('.matched').length === 12) {
+        if (document.querySelectorAll('.matched').length === 24) {
             clearInterval(gameInterval);
             let timeLeft = 50;
             alert('You Have achieved the highest score!');
