@@ -1,8 +1,8 @@
-const colors = ['red', 'blue', 'green', 'purple', 'orange', 'pink', 'red', 'blue', 'green', 'purple', 'orange', 'pink'];
+const colors = ['red', 'blue', 'green', 'purple', 'orange', 'pink','black','yellow','brown','grey'];
 let cards = shuffle(colors.concat(colors));
 let selectedCards = [];
 let score = 0;
-let timeLeft = 50;
+let timeLeft = 30;
 let gameInterval;
 
 const startbtn = document.getElementById('startbtn');
@@ -58,7 +58,7 @@ function checkMatch() {
 }
 
 function startGame() {
-    let timeLeft = 50;
+    let timeLeft = 30;
     startbtn.disabled = true;
     score = 0; // Reset score to zero
     scoreElement.textContent = `Score: ${score}`;
@@ -78,14 +78,14 @@ function startGameTimer(timeLeft) {
 
         if (timeLeft === 0) {
             clearInterval(gameInterval);
-            let timeLeft = 50;
+            let timeLeft = 30;
             alert('Game Over!');
             startbtn.disabled = false;
         }
 
-        if (document.querySelectorAll('.matched').length === 24) {
+        if (document.querySelectorAll('.matched').length === cards.length) {
             clearInterval(gameInterval);
-            let timeLeft = 50;
+            let timeLeft = 30;
             alert('You Have achieved the highest score!');
             startbtn.disabled = false;
         }
