@@ -82,6 +82,13 @@ function startGameTimer(timeLeft) {
             alert('Game Over!');
             startbtn.disabled = false;
         }
+
+        if (document.querySelectorAll('.matched').length === 12) {
+            clearInterval(gameInterval);
+            let timeLeft = 50;
+            alert('You Have achieved the highest score!');
+            startbtn.disabled = false;
+        }
     }, 1000);
 }
 
