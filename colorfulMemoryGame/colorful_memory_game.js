@@ -48,6 +48,10 @@ function checkMatch() {
         card2.classList.add('matched');
         score += 2;
         scoreElement.textContent = `Score: ${score}`;
+        
+        // Increase timer by 2 second when cards match
+        timeLeft += 2;
+        timerElement.textContent = `Time Left: ${timeLeft}`;
     } else {
         card1.textContent = '?';
         card2.textContent = '?';
@@ -56,6 +60,9 @@ function checkMatch() {
     }
     selectedCards = [];
 }
+
+
+
 
 function startGame() {
     let timeLeft = 30;
